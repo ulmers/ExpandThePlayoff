@@ -1,0 +1,21 @@
+.bracket {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.quarterfinal {
+
+}
+
+.left {
+  position: relative;
+  left: 10px;
+  display: inline;
+}
+
+.right {
+  position: relative;
+  right: 10px;
+  display: inline;
+}
