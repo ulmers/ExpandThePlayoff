@@ -1,0 +1,31 @@
+.left-round-of-sixteen {
+  flex-grow: 1;
+}
+
+.left-quarterfinal {
+  flex-grow: 1;
+}
+
+.left-semifinal {
+  flex-grow: 1;
+}
+
+.final {
+  flex-grow: 1;
+}
+
+.right-semifinal {
+  flex-grow: 1;
+}
+
+.right-quarterfinal {
+  flex-grow: 1;
+}
+
+.right-round-of-sixteen {
+  flex-grow: 1;
+}
+
+app-team-card {
+  margin: 0px;
+}
