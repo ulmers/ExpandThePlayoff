@@ -1,31 +1,62 @@
 .left-round-of-sixteen {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .left-quarterfinal {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .left-semifinal {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .final {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .right-semifinal {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .right-quarterfinal {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .right-round-of-sixteen {
-  flex-grow: 1;
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 app-team-card {
-  margin: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

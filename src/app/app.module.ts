@@ -5,18 +5,20 @@ import { AppComponent } from './app.component';
 import { TeamCardComponent } from './team-card/team-card.component';
 import { BracketComponent } from './bracket/bracket.component';
 
-import { MatCard, MatCardTitle } from '@angular/material';
+import { MatButtonModule, MatCardModule} from '@angular/material';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamCardComponent,
     BracketComponent,
-    MatCard,
-    MatCardTitle
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

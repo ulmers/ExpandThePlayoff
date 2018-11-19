@@ -1,0 +1,67 @@
+{
+  "Alabama" : {
+    "primary-color" : "#9E1B32",
+    "secondary-color" : "#828A8F"
+  },
+  "App State" : {
+    "primary-color": "#222222",
+    "secondary-color": "#FFCC00"
+  },
+  "Buffalo" : {
+    "primary-color" : "#005BBB",
+    "secondary-color" : "#FFFFFF"
+  },
+  "Clemson" : {
+    "primary-color" : "#F56600",
+    "secondary-color" : "#522D80"
+  },
+  "Florida" : {
+    "primary-color" : "#0021A5",
+    "secondary-color" : "#FA4616"
+  },
+  "Georgia" : {
+    "primary-color" : "#BA0C2F",
+    "secondary-color" : "#000000"
+  },
+  "LSU" : {
+    "primary-color" : "#461D7C",
+    "secondary-color" : "#FDD023"
+  },
+  "Michigan" : {
+    "primary-color": "#00274c",
+    "secondary-color": "#FFCB05"
+  },
+  "Notre Dame" : {
+    "primary-color": "#0C2340",
+    "secondary-color": "#C99700"
+  },
+  "Ohio State" : {
+    "primary-color": "#BB0000",
+    "secondary-color": "#666666"
+  },
+  "Oklahoma" : {
+    "primary-color": "#841617",
+    "secondary-color": "#FDF9D8"
+  },
+  "Washington State" : {
+    "primary-color": "#981E32",
+    "secondary-color": "#5E6A71"
+  },
+  "Texas" : {
+    "primary-color": "#BF5700",
+    "secondary-color": "#333F48"
+  },
+  "UAB" : {
+    "primary-color": "#006341",
+    "secondary-color": "#CC8A00"
+  },
+  "UCF" : {
+    "primary-color": "#000000",
+    "secondary-color": "#b5985a"
+  },
+  "Utah State" : {
+    "primary-color": "#0F2439",
+    "secondary-color": "#0F2439"
+  }
+
+}

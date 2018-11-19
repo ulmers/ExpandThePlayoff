@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {BracketNode} from '../bracket-node';
+import {ColorService} from '../color.service';
 
 @Component({
   selector: 'app-team-card',
@@ -7,12 +9,27 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TeamCardComponent implements OnInit {
 
-  @Input() teamname: string;
+  @Input() bracketNode: BracketNode;
   @Input() class: string;
 
-  constructor() { }
+  constructor(private colorService: ColorService) { }
 
   ngOnInit() {
+  }
+
+  backgroundColor(): object {
+    if (this.bracketNode.teamName.length > 0) {
+      return {'background-color': this.colorService.getSecondaryColor(this.bracketNode.teamName)};
+    }
+
+    return {};
+}
+
+  onClickAdvance() {
+    if (this.bracketNode.teamName.length > 0) {
+      this.bracketNode.parent.teamName = this.bracketNode.teamName;
+    }
+
   }
 
 }
