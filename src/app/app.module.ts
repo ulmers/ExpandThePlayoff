@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { TeamCardComponent } from './team-card/team-card.component';
 import { BracketComponent } from './bracket/bracket.component';
 
-import { MatButtonModule, MatCardModule} from '@angular/material';
+import { MatCardModule, MatToolbarModule, MatButtonModule} from '@angular/material';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ShareComponent } from './share/share.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -13,8 +15,13 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppComponent,
     TeamCardComponent,
     BracketComponent,
+    ToolbarComponent,
+    ShareComponent,
   ],
   imports: [
+    BrowserModule,
+    MatCardModule,
+    MatToolbarModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
