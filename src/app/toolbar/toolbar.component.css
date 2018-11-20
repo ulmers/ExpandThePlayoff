@@ -1,5 +1,28 @@
+mat-toolbar {
+  background-color: #303030;
+  height: 70px;
+}
+
+.title-and-subtitle {
+  position: relative;
+  top: 5px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title {
   margin: 0 auto;
   font-family: Bitter, serif;
   font-size: xx-large;
+  color: #FFFFFF;
 }
+
+.subtitle {
+  margin: 0 auto;
+  font-family: Bitter, serif;
+  font-size: small;
+  color: #FFFFFF;
+}
+

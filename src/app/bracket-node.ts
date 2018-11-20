@@ -5,9 +5,11 @@ export class BracketNode {
   right: BracketNode;
 
   teamName: string;
+  seed: number
 
-  constructor(teamName: string, parent: BracketNode) {
+  constructor(teamName: string, seed: number, parent: BracketNode) {
     this.teamName = teamName;
+    this.seed = seed;
     this.parent = parent;
     this.left = null;
     this.right = null;

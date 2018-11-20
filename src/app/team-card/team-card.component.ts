@@ -28,6 +28,7 @@ export class TeamCardComponent implements OnInit {
   onClickAdvance() {
     if (this.bracketNode.teamName.length > 0) {
       this.bracketNode.parent.teamName = this.bracketNode.teamName;
+      this.bracketNode.parent.seed = this.bracketNode.seed;
     }
 
   }
