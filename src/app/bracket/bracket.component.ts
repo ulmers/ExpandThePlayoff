@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BracketNode} from '../bracket-node';
+import {ActivatedRoute} from '@angular/router';
+import {TeamIdService} from '../team-id.service';
 
 @Component({
   selector: 'app-bracket',
@@ -27,11 +29,34 @@ export class BracketComponent implements OnInit {
                        {'seed': 6, 'teamName': 'Texas'},
                        {'seed': 11, 'teamName': 'Ohio State'}];
 
-  constructor() { }
+  config: string;
+
+  constructor(private route: ActivatedRoute, private teamIdService: TeamIdService) { }
 
   ngOnInit() {
 
+    this.route.queryParams.subscribe(params => {
+      this.setConfig(params['config']);
+    });
+
     this.initBracket();
+  }
+
+  setConfig(config: string) {
+    this.config = config;
+
+    if (this.config) {
+      this.applyConfig();
+    }
+  }
+
+  applyConfig() {
+    let i: number;
+    for (i = 0; i < 16; i++) {
+      this.teamSeedsAndNames.find(element => {
+        return element.seed === i + 1;
+      }).teamName = this.teamIdService.getTeamAtIndex(this.hexToIndex(this.config.substring(i * 2, i * 2 + 1)));
+    }
   }
 
   initBracket() {
@@ -60,7 +85,9 @@ export class BracketComponent implements OnInit {
 
     this.preorderTraverse(currNode.left, currDepth + 1, maxDepth);
     this.preorderTraverse(currNode.right, currDepth + 1, maxDepth);
-
   }
 
+  hexToIndex(hex: string): number {
+    return parseInt(hex, 16);
+  }
 }

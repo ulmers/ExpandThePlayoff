@@ -1,0 +1,16 @@
+.header {
+  font-family: Bitter, serif;
+  color: #FFFFFF;
+  font-size: small;
+  width: 100%;
+  text-align: center;
+  margin: 5px;
+}
+
+.twitter-share {
+  opacity: 1;
+}
+
+.facebook-share {
+  opacity: 1;
+}

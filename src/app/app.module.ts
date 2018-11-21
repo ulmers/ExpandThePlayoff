@@ -9,6 +9,7 @@ import { MatCardModule, MatToolbarModule, MatButtonModule} from '@angular/materi
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ShareComponent } from './share/share.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

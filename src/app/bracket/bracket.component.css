@@ -60,3 +60,10 @@ app-team-card {
   flex-direction: column;
   justify-content: center;
 }
+
+app-share {
+  position: relative;
+  bottom: 0;
+  margin: 0 auto;
+  z-index: 10;
+}
