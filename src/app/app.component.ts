@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  getDefaultConfig(): string {
+    return '0210020202020202020202020202020202';
+  }
 }

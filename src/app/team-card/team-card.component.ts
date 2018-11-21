@@ -18,9 +18,12 @@ export class TeamCardComponent implements OnInit {
   }
 
   backgroundColor(): object {
-    if (this.bracketNode.teamName.length > 0) {
-      return {'background-color': this.colorService.getSecondaryColor(this.bracketNode.teamName)};
+    if (this.bracketNode) {
+      if (this.bracketNode.teamName.length > 0) {
+        return {'background-color': this.colorService.getSecondaryColor(this.bracketNode.teamName)};
+      }
     }
+
 
     return {};
 }
@@ -29,8 +32,8 @@ export class TeamCardComponent implements OnInit {
     if (this.bracketNode.teamName.length > 0) {
       this.bracketNode.parent.teamName = this.bracketNode.teamName;
       this.bracketNode.parent.seed = this.bracketNode.seed;
+
     }
 
   }
-
 }

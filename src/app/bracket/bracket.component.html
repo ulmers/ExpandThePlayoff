@@ -1,46 +1,45 @@
-{{config}}
 <div class="left-round-of-sixteen">
-  <app-team-card [bracketNode]="headNode.left.left.left.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.left.left.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.left.right.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.left.right.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right.right.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right.right.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right.left.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right.left.right" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left.left.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left.left.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left.right.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left.right.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right.right.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right.right.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right.left.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right.left.right : null" class=""></app-team-card>
 </div>
 <div class="left-quarterfinal">
-  <app-team-card [bracketNode]="headNode.left.left.left"></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.left.right"></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right.right"></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right.left"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left.left : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left.right : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right.right : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right.left : null"></app-team-card>
 </div>
 <div class="left-semifinal">
-  <app-team-card [bracketNode]="headNode.left.left"></app-team-card>
-  <app-team-card [bracketNode]="headNode.left.right"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.left : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left.right : null"></app-team-card>
 </div>
 <div class="final">
-  <app-team-card [bracketNode]="headNode.left" style="justify-content: flex-end; flex-grow: 3;"></app-team-card>
-  <app-team-card [bracketNode]="headNode"></app-team-card>
-  <app-team-card [bracketNode]="headNode.right" style="justify-content: flex-start; flex-grow: 3;"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.left : null" style="justify-content: flex-end; flex-grow: 3;"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right : null" style="justify-content: flex-start; flex-grow: 3;"></app-team-card>
 </div>
 <div class="right-semifinal">
-  <app-team-card [bracketNode]="headNode.right.left"></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right : null"></app-team-card>
 </div>
 <div class="right-quarterfinal">
-  <app-team-card [bracketNode]="headNode.right.left.left"></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.left.right"></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right.right"></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right.left"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left.left : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left.right : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right.right : null"></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right.left : null"></app-team-card>
 </div>
 <div class="right-round-of-sixteen">
-  <app-team-card [bracketNode]="headNode.right.left.left.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.left.left.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.left.right.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.left.right.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right.right.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right.right.left" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right.left.right" class=""></app-team-card>
-  <app-team-card [bracketNode]="headNode.right.right.left.left" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left.left.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left.left.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left.right.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.left.right.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right.right.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right.right.left : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right.left.right : null" class=""></app-team-card>
+  <app-team-card [bracketNode]="configApplied ? headNode.right.right.left.left : null" class=""></app-team-card>
 </div>

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TeamIdService {
 
-  // Index is equal to the line number minus 9
+  // Index is equal to the line number minus 10
   teamArray =
      ['Air Force',
       'Akron',

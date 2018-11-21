@@ -2,6 +2,6 @@
   <div class="team-name">
     {{bracketNode ? (bracketNode.seed ? bracketNode.seed + " ": "" ) + bracketNode.teamName : ""}}
   </div>
-  <img src="assets/{{bracketNode.teamName}}.png" alt="" width="50%">
+  <img [src]="bracketNode ? 'assets/' + bracketNode.teamName + '.png' : ''" alt="" width="50%">
   <button *ngIf="bracketNode ? bracketNode.teamName.length > 1 : false" class="advance-button" (click)="onClickAdvance()" mat-button></button>
 </mat-card>

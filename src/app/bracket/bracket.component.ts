@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {BracketNode} from '../bracket-node';
 import {ActivatedRoute} from '@angular/router';
 import {TeamIdService} from '../team-id.service';
+import {element} from 'protractor';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-bracket',
@@ -12,24 +14,13 @@ export class BracketComponent implements OnInit {
 
   headNode: BracketNode;
 
-  teamSeedsAndNames = [{'seed': 1, 'teamName': 'Alabama'},
-                       {'seed': 16, 'teamName': 'Buffalo'},
-                       {'seed': 9, 'teamName': 'Florida'},
-                       {'seed': 8, 'teamName': 'Oklahoma'},
-                       {'seed': 13, 'teamName': 'App State'},
-                       {'seed': 4, 'teamName': 'LSU'},
-                       {'seed': 5, 'teamName': 'Michigan'},
-                       {'seed': 12, 'teamName': 'Washington State'},
-                       {'seed': 2, 'teamName': 'Clemson'},
-                       {'seed': 15, 'teamName': 'UAB'},
-                       {'seed': 7, 'teamName': 'Georgia'},
-                       {'seed': 10, 'teamName': 'UCF'},
-                       {'seed': 3, 'teamName': 'Notre Dame'},
-                       {'seed': 14, 'teamName': 'Utah State'},
-                       {'seed': 6, 'teamName': 'Texas'},
-                       {'seed': 11, 'teamName': 'Ohio State'}];
+  teamSeedsAndNames;
 
-  config: string;
+  configApplied = false;
+
+  @Input () defaultConfig: string;
+
+  config = this.defaultConfig;
 
   constructor(private route: ActivatedRoute, private teamIdService: TeamIdService) { }
 
@@ -38,25 +29,51 @@ export class BracketComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.setConfig(params['config']);
     });
+  }
 
-    this.initBracket();
+  initTeamsSeedsAndNames() {
+    this.teamSeedsAndNames = [
+      {'seed': 1, 'teamName': ''},
+      {'seed': 16, 'teamName': ''},
+      {'seed': 9, 'teamName': ''},
+      {'seed': 8, 'teamName': ''},
+      {'seed': 13, 'teamName': ''},
+      {'seed': 4, 'teamName': ''},
+      {'seed': 5, 'teamName': ''},
+      {'seed': 12, 'teamName': ''},
+      {'seed': 2, 'teamName': ''},
+      {'seed': 15, 'teamName': ''},
+      {'seed': 7, 'teamName': ''},
+      {'seed': 10, 'teamName': ''},
+      {'seed': 3, 'teamName': ''},
+      {'seed': 14, 'teamName': ''},
+      {'seed': 6, 'teamName': ''},
+      {'seed': 11, 'teamName': ''}];
   }
 
   setConfig(config: string) {
-    this.config = config;
-
-    if (this.config) {
-      this.applyConfig();
+    if (config) {
+      this.config = config;
+    } else {
+      this.config = this.defaultConfig;
     }
+
+    this.applyConfig();
   }
 
   applyConfig() {
-    let i: number;
-    for (i = 0; i < 16; i++) {
-      this.teamSeedsAndNames.find(element => {
-        return element.seed === i + 1;
-      }).teamName = this.teamIdService.getTeamAtIndex(this.hexToIndex(this.config.substring(i * 2, i * 2 + 1)));
-    }
+
+    this.initTeamsSeedsAndNames();
+
+    this.teamSeedsAndNames.forEach(element => {
+      console.log(element.teamName + 'changed to: ');
+      element.teamName = this.teamIdService.getTeamAtIndex(this.hexToIndex(this.config.substring((element.seed - 1) * 2, (element.seed - 1) * 2 + 2)));
+      console.log(element.teamName + '\n');
+    });
+
+    this.initBracket();
+
+    this.configApplied = true;
   }
 
   initBracket() {
@@ -89,5 +106,21 @@ export class BracketComponent implements OnInit {
 
   hexToIndex(hex: string): number {
     return parseInt(hex, 16);
+  }
+
+  currentConfig(): string {
+    const teamsCopy = this.teamSeedsAndNames;
+
+    teamsCopy.sort( (a, b) => {
+      return a['seed'] - b['seed'];
+    });
+
+    let ret = '';
+
+    teamsCopy.forEach( element => {
+      ret += this.teamIdService.getIndexForTeam(element['teamName']).toString(16);
+    });
+
+    return ret;
   }
 }
