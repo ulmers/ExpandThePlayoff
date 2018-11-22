@@ -63,6 +63,10 @@
     "primary-color": "#BF5700",
     "secondary-color": "#333F48"
   },
+  "Troy" : {
+    "primary-color": "#6D0017",
+    "secondary-color": "#CCCCCC"
+  },
   "UAB" : {
     "primary-color": "#006341",
     "secondary-color": "#CC8A00"

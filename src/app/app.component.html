@@ -1,6 +1,14 @@
 <app-toolbar></app-toolbar>
 <div class="field">
   <div class="bracket-container">
+    <div class="teams">
+      10 Conference Champions<br>
+      6 At-Large
+      <div class="seeding">
+        Seeds based on CFP and <a href="https://www.footballoutsiders.com/stats/ncaa">S&P+</a> Rankings
+      </div>
+    </div>
+
     <app-bracket [defaultConfig]="getDefaultConfig()" class="bracket"></app-bracket>
     <app-share></app-share>
   </div>

@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'app';
 
   getDefaultConfig(): string {
-    return '0210020202020202020202020202020202';
+    return '02154938214C2F786B4B1C51706A6710';
   }
 }

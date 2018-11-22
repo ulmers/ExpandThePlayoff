@@ -3,7 +3,7 @@ app-toolbar {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .field {
@@ -23,10 +23,23 @@ app-toolbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #232323;
+}
+
+.teams {
+  position: absolute;
+  top: 60px;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Bitter, serif;
+  font-size: large;
+}
+
+.seeding {
+  font-size: x-small;
 }
 
 .bracket {
-
   display: flex;
   justify-content: space-evenly;
   min-width: 700px;
@@ -35,11 +48,12 @@ app-toolbar {
 }
 
 app-share {
+  position: absolute;
   width: 10%;
   display: flex;
   z-index: 10;
-  background-color: rgba(0,0,0,0.69);
   flex-wrap: wrap;
   justify-content: space-evenly;
   border-radius: 5px;
+  bottom: 50px;
 }
