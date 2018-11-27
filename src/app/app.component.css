@@ -14,6 +14,7 @@ app-toolbar {
   padding: 0;
   width: 70%;
   height: 4000px;
+  min-width: 734px;
 }
 
 .bracket-container {
